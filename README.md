@@ -1,24 +1,28 @@
 # Book-Details
+- This Java program was developed to implement basic list operations using an array-based list data structure for managing product details.
 
-## Book Information
-- Book ID : BookID
-- Name of the book : Title
-- Name of the author : Author
-- Published Year of the book : Year 
+## Implemented Functionalities
+- Inserted and displayed the given product records.
+- Added a new product (`P1005 - Biscuit`) into the 5th position of the list.
+- Updated the product `P1004` by changing its name from **Pen** to **Marker Pen** using a sequential search and replace operation.
+- Displayed the updated product record using its index.
+- Implemented sorting of products by price in ascending order using:
 
-## Project Description
-- This project was developed using Java and IntelliJ IDEA.
+  - Insertion Sort
+  - Selection Sort
+  - Bubble Sort
+  - Heap Sort
+- Implemented searching of products by price using:
 
-## Features
-- Add books
-- Delete books
-- Search books
-- Sort books
-- Replace books
-- Show all details of book list
+  - Sequential Search
+  - Binary Search
+  - Recursive Binary Search
 
 ## Technologies Used
 - Java
-- IntelliJ IDEA
-- GitHub
-- SonarQube
+- Array-based List Data Structure
+- Git and GitHub for version control
+
+## Author
+- Dewni Gunawardena
+
