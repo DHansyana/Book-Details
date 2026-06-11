@@ -1,13 +1,13 @@
 # Book-Details
 
 ## Book Information
-Book ID : BookID
-Name of the book : Title
-Name of the author : Author
-Published Year of the book : Year 
+- Book ID : BookID
+- Name of the book : Title
+- Name of the author : Author
+- Published Year of the book : Year 
 
 ## Project Description
-This project was developed using Java and IntelliJ IDEA.
+- This project was developed using Java and IntelliJ IDEA.
 
 ## Features
 - Add books
