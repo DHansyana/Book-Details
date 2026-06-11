@@ -1,4 +1,5 @@
 package BookDetails;
+import java.util.logging.Logger;
 
 public class List {
     private int maxSize;
@@ -23,7 +24,7 @@ public class List {
         return (position + 1);
     }
 
-    void InsertLast(Book element) {
+    void insertLast(Book element) {
         if (IsListFull()) {
             System.out.println("Attempt to insert at the end of a full list.");
         } else {
@@ -31,7 +32,7 @@ public class List {
         }
     }
 
-    void InsertList(int p, Book element) {
+    void insertList(int p, Book element) {
         if (IsListFull()) {
             System.out.println("Attempt to insert an element into a full list.");
         } else if (p < 0 || p > ListSize()) {
@@ -45,7 +46,7 @@ public class List {
         }
     }
 
-    Book RetrieveList(int p) {
+    Book retrieveList(int p) {
         Book element;
         if (IsListEmpty()) {
             System.out.println("Attempt to retrieve an element from an empty list.");
@@ -58,7 +59,7 @@ public class List {
         return null;
     }
 
-    Book DeleteList(int p) {
+    Book deleteList(int p) {
         Book element;
         if (IsListEmpty()) {
             System.out.println("Attempt to delete an entry from an empty list.");
@@ -75,17 +76,17 @@ public class List {
         return null;
     }
 
-    void TraversalList() {
+    void traversalList() {
         for (int i = 0; i < position + 1; i++) {
-            System.out.println(ListEntry[i].BookID + " | " + ListEntry[i].Title + "  " + ListEntry[i].Author + " | " + ListEntry[i].Year);
+            Logger.getAnonymousLogger(ListEntry[i].BookID + " | " + ListEntry[i].Title + "  " + ListEntry[i].Author + " | " + ListEntry[i].Year);
         }
     }
 
-    void ReplaceList(int p, Book element) {
+    void replaceList(int p, Book element) {
         if (IsListEmpty()) {
-            System.out.println("Attempt to replace an entry from an empty list.");
+            Logger.getAnonymousLogger("Attempt to replace an entry from an empty list.");
         } else if (p < 0 || p >= ListSize()) {
-            System.out.println("Attempt to replace a position not in the list.");
+            Logger.getAnonymousLogger("Attempt to replace a position not in the list.");
         } else {
             ListEntry[p] = element;
         }
@@ -93,7 +94,7 @@ public class List {
 
 
 
-    int SequentialSearch(String key) {
+    int sequentialSearch(String key) {
         for (int i = 0; i < ListSize(); i++) {
             if (ListEntry[i].BookID.equals(key))
                 return i;
@@ -101,7 +102,7 @@ public class List {
         return -1;
     }
 
-    void InsertionSort() {
+    void insertionSort() {
         for (int i = 1; i < ListSize(); i++) {
             Book key = ListEntry[i];
             int j = i - 1;
@@ -114,7 +115,7 @@ public class List {
         }
     }
 
-    void SelectionSort(){
+    void selectionSort(){
         for(int i = ListSize()-1 ; i >= 0 ; i--){
             int maxIndex = getMaxIndex(i);
             Book temp = ListEntry[maxIndex];
@@ -131,7 +132,7 @@ public class List {
         return Index;
     }
 
-    void BubbleSort(){
+    void bubbleSort(){
         int n = ListSize();
         Book temp = null;
         for(int i = 0 ; i < n ; i++){
@@ -145,19 +146,19 @@ public class List {
         }
     }
 
-    void HeapSort(){
+    void heapSort(){
         int n = ListSize();
         for(int i = n/2 -1 ; i >= 0 ; i--){
-            InsertHeap(n,i);
+            insertHeap(n,i);
         }
         for(int i = n-1 ; i >= 0 ; i--){
             Book temp = ListEntry[0];
             ListEntry[0] = ListEntry[i];
             ListEntry[i] = temp;
-            InsertHeap(i,0);
+            insertHeap(i,0);
         }
     }
-    void InsertHeap(int n,int i){
+    void insertHeap(int n,int i){
         int largest = i;
         int left = 2*i + 1;
         int right = 2*i + 2;
@@ -169,11 +170,11 @@ public class List {
             Book temp = ListEntry[i];
             ListEntry[i] = ListEntry[largest];
             ListEntry[largest] = temp;
-            InsertHeap(n,largest);
+            insertHeap(n,largest);
         }
     }
 
-    Book SequentialSearch2(String key) {
+    Book sequentialSearch2(String key) {
         for (int i = 0; i < ListSize(); i++) {
             if (ListEntry[i].Author.equals(key))
                 return ListEntry[i];
@@ -198,7 +199,7 @@ public class List {
         return -1;
     }
 
-    void BubbleSort2(){
+    void bubbleSort2(){
         int n = ListSize();
         Book temp = null;
         for(int i = 0 ; i < n ; i++){
@@ -229,9 +230,9 @@ public class List {
         return null;
     }
 
-    void TraversalReverseList(){
+    void traversalReverseList(){
         for (int i = position ; i >= 0 ; i--) {
-            System.out.println(ListEntry[i].BookID + " | " + ListEntry[i].Title + "  " + ListEntry[i].Author + " | " + ListEntry[i].Year);
+            Logger.getAnonymousLogger(ListEntry[i].BookID + " | " + ListEntry[i].Title + "  " + ListEntry[i].Author + " | " + ListEntry[i].Year);
         }
     }
 }
